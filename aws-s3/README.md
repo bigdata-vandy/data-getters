@@ -12,3 +12,8 @@ is a one-liner for exporting the credentials as environment variables:
 ```
 export $(cat ~/.aws/credentials | grep -v "^\[" | awk '{print toupper($1)$2$3 }')
 ```
+
+## Syncing the Google Books ngrams dataset
+
+The following image shows the HDFS write rate during a download of [Google Books Ngrams][http://storage.googleapis.com/books/ngrams/books/datasetsv2.html] for all English corpora.
+
