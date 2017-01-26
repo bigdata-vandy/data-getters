@@ -7,5 +7,8 @@ You must have
 [AWS credentials][http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html]
 in order to access the s3 buckets.
 
-The default location for credentials is `~/.aws/credentials``. The script `set_credentials.sh` 
-is a helper for exporting the credentials as environment variables.
+The default location for credentials is `~/.aws/credentials``. The file `set_credentials.sh` 
+is a one-liner for exporting the credentials as environment variables:
+```
+export $(cat ~/.aws/credentials | grep -v "^\[" | awk '{print toupper($1)$2$3 }')
+```
